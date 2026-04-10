@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Keep Clicking... 👀</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: Arial, sans-serif;
+      background: black;
+      color: white;
+      text-align: center;
+      flex-direction: column;
+    }
+    a, button {
+      margin: 10px;
+      padding: 10px 20px;
+      font-size: 18px;
+      cursor: pointer;
+      border: none;
+      border-radius: 10px;
+    }
+    .hidden {
+      display: none;
+    }
+    .sun {
+      font-size: 60px;
+    }
+  </style>
+</head>
+
+<body>
+
+<div id="step1">
+  <h2>Click the correct path 🤔</h2>
+  <button onclick="next(2)">Link 1</button>
+  <button onclick="wrong()">Link 2</button>
+  <button onclick="wrong()">Link 3</button>
+</div>
+
+<div id="step2" class="hidden">
+  <h2>You're getting closer... 👀</h2>
+  <button onclick="wrong()">Link A</button>
+  <button onclick="next(3)">Link B</button>
+</div>
+
+<div id="step3" class="hidden">
+  <h2>Almost there... 😏</h2>
+  <button onclick="next(4)">Final Link</button>
+</div>
+
+<div id="step4" class="hidden">
+  <h1>🌞 Good Morning 🌞</h1>
+  <p>.....</p>
+  <p>Wishing you a bright and beautiful day ✨</p>
+</div>
+
+<script>
+  function next(step) {
+    document.querySelectorAll("div").forEach(d => d.classList.add("hidden"));
+    document.getElementById("step" + step).classList.remove("hidden");
+  }
+
+  function wrong() {
+    alert("Wrong choice 😅 Try again!");
+  }
+</script>
+
+</body>
+</html>
